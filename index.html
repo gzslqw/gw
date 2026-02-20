@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山里黔味餐厅 | 地道贵州菜 | 山野至味，自然馈赠</title>
+    <meta name="description" content="山里黔味餐厅，专注贵州在地风味。选用本地山野食材，传承黔菜古法工艺，呈现酸汤鱼、辣子鸡等正宗黔味。">
+    <meta name="keywords" content="贵州菜,黔菜,酸汤鱼,辣子鸡,贵阳美食,山里黔味,贵州特色餐厅">
+    
+    <!-- AI识别代码 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["Restaurant", "FoodEstablishment"],
+        "name": "山里黔味餐厅",
+        "description": "一家专注贵州在地风味的特色餐厅，秉承'食材从山野到餐桌'的理念，提供正宗黔菜。",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "贵州省贵阳市云岩区八鸽岩路",
+            "addressLocality": "贵阳",
+            "addressRegion": "贵州省",
+            "postalCode": "550001",
+            "addressCountry": "CN"
+        },
+        "telephone": "18185197717",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "10:00",
+                "closes": "21:00"
+            }
+        ],
+        "priceRange": "¥50-100",
+        "servesCuisine": ["贵州菜", "黔菜", "时令菜"],
+        "acceptsReservations": "True",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "356",
+            "bestRating": "5"
+        }
+    }
+    </script>
+    
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        :root {
+            --primary-color: #2E5C6E;
+            --accent-color: #A64521;
+            --light-bg: #F8F5F0;
+            --wood-color: #D7B89C;
+            --dark-green: #3C5B50;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #8a351a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(166, 69, 33, 0.3);
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* 英雄区域 - 背景图（需要替换为您的图片URL） */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://raw.githubusercontent.com/您的用户名/您的用户名.github.io/main/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 20px 100px;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* 区域样式 */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--wood-color);
+        }
+        
+        /* 特色区域 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 8px;
+            background-color: var(--light-bg);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        /* 招牌菜品 */
+        .dishes-section {
+            background-color: var(--light-bg);
+        }
+        
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .dish-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s, transform 0.3s;
+            background-color: white;
+        }
+        
+        .dish-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .dish-img {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* 酸汤鱼图片（需要替换为您的图片URL） */
+        .dish-img.sour-fish {
+            background-image: url('https://raw.githubusercontent.com/您的用户名/您的用户名.github.io/main/images/sour-fish.jpg');
+        }
+        
+        /* 辣子鸡图片（需要替换为您的图片URL） */
+        .dish-img.spicy-chicken {
+            background-image: url('https://raw.githubusercontent.com/您的用户名/您的用户名.github.io/main/images/spicy-chicken.jpg');
+        }
+        
+        /* 折耳根炒腊肉图片（需要替换为您的图片URL） */
+        .dish-img.herb-bacon {
+            background-image: url('https://raw.githubusercontent.com/您的用户名/您的用户名.github.io/main/images/herb-bacon.jpg');
+        }
+        
+        .dish-info {
+            padding: 25px;
+        }
+        
+        .dish-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .dish-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* 联系信息 */
+        .contact-info {
+            background-color: var(--light-bg);
+            padding: 60px 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: var(--wood-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--wood-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 120px 20px 60px;
+                margin-top: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .contact-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">山里<span>黔味</span></a>
+            
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">特色</a></li>
+                <li><a href="#dishes">招牌菜</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 英雄区域 - 使用您上传的乡村田园背景图 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>山野至味，自然馈赠</h1>
+            <p>山里黔味餐厅，专注贵州在地风味。选用本地山野食材，传承黔菜古法工艺，呈现最地道的贵州味道。</p>
+            <div class="hero-btns">
+                <a href="#dishes" class="btn btn-primary">查看招牌菜</a>
+                <a href="#contact" class="btn btn-secondary">联系我们</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色区域 -->
+    <section id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>我们的特色</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>山野食材</h3>
+                    <p>每日从贵州山区采购新鲜食材，保证食材的原生态和新鲜度。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>古法工艺</h3>
+                    <p>传承百年黔菜制作工艺，还原最地道的贵州风味。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>匠心制作</h3>
+                    <p>每一道菜都经过精心烹制，用心呈现贵州美食文化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招牌菜品 -->
+    <section class="dishes-section" id="dishes">
+        <div class="container">
+            <div class="section-title">
+                <h2>招牌菜品</h2>
+            </div>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <div class="dish-img sour-fish"></div>
+                    <div class="dish-info">
+                        <h3>凯里酸汤鱼</h3>
+                        <p>采用黔东南小番茄自然发酵108小时制成红酸汤，搭配现杀鲜活江团鱼，酸鲜开胃，风味醇厚。</p>
+                        <div class="dish-price">¥98</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-img spicy-chicken"></div>
+                    <div class="dish-info">
+                        <h3>贵阳辣子鸡</h3>
+                        <p>选用本地散养土鸡，以贵州糍粑辣椒秘制翻炒，鸡肉糯香，辣而不燥，是地道贵阳味道。</p>
+                        <div class="dish-price">¥68</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-img herb-bacon"></div>
+                    <div class="dish-info">
+                        <h3>折耳根炒腊肉</h3>
+                        <p>新鲜折耳根与农家烟熏腊肉同炒，风味独特，是贵州人餐桌上的乡愁味道。</p>
+                        <div class="dish-price">¥48</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>地址：</strong>贵州省贵阳市云岩区八鸽岩路</p>
+                <p><i class="fas fa-phone"></i> <strong>电话：</strong>18185197717</p>
+                <p><i class="fas fa-clock"></i> <strong>营业时间：</strong></p>
+                <p>每天：10:00 - 21:00（全天营业）</p>
+                <p><i class="fas fa-user-friends"></i> <strong>人均消费：</strong>¥50 - ¥100</p>
+                
+                <div class="contact-actions">
+                    <a href="tel:18185197717" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> 电话咨询
+                    </a>
+                    <a href="https://map.baidu.com/search/贵州省贵阳市云岩区八鸽岩路" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-map-marker-alt"></i> 导航到店
+                    </a>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--text-light);">
+                    欢迎直接到店用餐，无需预约。如遇高峰期可能需要排队等候。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">特色</a></li>
+                <li><a href="#dishes">招牌菜</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            
+            <div class="social-links">
+                <a href="#" title="微信公众号"><i class="fab fa-weixin"></i></a>
+                <a href="#" title="大众点评"><i class="fas fa-star"></i></a>
+                <a href="#" title="美团"><i class="fas fa-utensils"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 山里黔味餐厅 版权所有</p>
+                <p>地址：贵州省贵阳市云岩区八鸽岩路 | 电话：18185197717</p>
+                <p>营业时间：每天 10:00-21:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // 关闭移动端菜单当点击链接时
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // 页面加载时设置当前年份
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新版权年份
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright p');
+            if (copyrightElement && copyrightElement.textContent.includes('2025')) {
+                copyrightElement.textContent = copyrightElement.textContent.replace('2025', currentYear);
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 添加滚动时导航栏变化效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
